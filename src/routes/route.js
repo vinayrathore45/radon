@@ -1,7 +1,7 @@
 const express = require('express');
 const myHelper = require('../util/helper')
 const underscore = require('underscore')
-
+const movies = require('../movies/moviesIndex.js')
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
@@ -12,6 +12,14 @@ router.get('/test-me', function (req, res) {
     console.log('The first element received from underscope function is '+firstElement)
     res.send('My first ever api!')
 });
+router.get('/movies', function (req, res){
+    res.send(movies.moviesIndex())
+
+});
+router.get('/sol1', function (req, res)
+
+
+}
 
 router.get('/hello', function (req, res) {
    
