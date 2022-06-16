@@ -13,9 +13,9 @@ router.post("/login", userController.loginUser)
 
 //The userId is sent by front end
 router.get("/users/:userId",MiddleWare.authenticate,MiddleWare.authorise,userController.getUserData)
-router.post("/users/:userId/posts",MiddleWare.authenticate, userController.postMessage)
+router.post("/users/:userId/posts",MiddleWare.authenticate,MiddleWare.authorise, userController.postMessage)
 
-router.put("/users/:userId",MiddleWare.authenticate,  userController.updateUser)
-router.delete("/users/:userId",MiddleWare.authenticate,userController.deleteUser)
+router.put("/users/:userId",MiddleWare.authenticate,MiddleWare.authorise, userController.updateUser)
+router.delete("/users/:userId",MiddleWare.authenticate,MiddleWare.authorise,userController.deleteUser)
 
 module.exports = router;
